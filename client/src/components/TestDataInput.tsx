@@ -53,8 +53,8 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
           <Form {...form}>
             <form onSubmit={handleCalculate} className="space-y-6">
               {/* Variant A (Control) */}
-              <div>
-                <h3 className="text-lg font-medium text-primary mb-3">Variant A (Control)</h3>
+              <div className="bg-neutral-50 p-4 rounded-lg">
+                <h3 className="text-lg font-medium text-green-600 mb-3">Variant A (Control)</h3>
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
@@ -128,8 +128,8 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
               </div>
               
               {/* Variant B (Test) */}
-              <div>
-                <h3 className="text-lg font-medium text-accent mb-3">Variant B (Test)</h3>
+              <div className="mt-6 bg-blue-50 p-4 rounded-lg">
+                <h3 className="text-lg font-medium text-blue-600 mb-3">Variant B (Test)</h3>
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
@@ -203,8 +203,8 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
               </div>
               
               {/* Test Settings */}
-              <div>
-                <h3 className="text-lg font-medium mb-3">Test Settings</h3>
+              <div className="mt-6 bg-neutral-100 p-4 rounded-lg">
+                <h3 className="text-lg font-medium text-purple-600 mb-3">Test Settings</h3>
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
