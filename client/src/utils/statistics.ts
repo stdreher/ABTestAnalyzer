@@ -58,7 +58,7 @@ export function calculateConfidenceInterval(
 export function calculateStatistics(data: ABTestResult): StatisticalResult {
   const { visitorsA, conversionsA, visitorsB, conversionsB, confidenceLevel } = data;
   
-  // Calculate rates
+  // Calculate rates (Konversionsrate = Konversionen / Besucher)
   const rateA = conversionsA / visitorsA;
   const rateB = conversionsB / visitorsB;
   

@@ -19,7 +19,13 @@ export default function ResultsCard({ results }: ResultsCardProps) {
   } = results;
 
   // Debug-Info zum Identifizieren von Problemen mit der Berechnung
-  console.log("Ergebnisse:", { rateA, rateB, fullResults: results });
+  console.log("Ergebnisse:", { 
+    rateA, 
+    rateB, 
+    rateA_prozent: (rateA * 100).toFixed(2) + "%", 
+    rateB_prozent: (rateB * 100).toFixed(2) + "%", 
+    fullResults: results 
+  });
 
   // Format values for display
   const formattedRateA = (rateA * 100).toFixed(2);
