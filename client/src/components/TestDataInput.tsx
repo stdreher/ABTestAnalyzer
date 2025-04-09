@@ -49,23 +49,23 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
     <>
       <Card className="bg-white shadow-sm mb-6">
         <CardContent className="pt-6">
-          <h2 className="text-xl font-semibold mb-4">Test Data Input</h2>
+          <h2 className="text-xl font-semibold mb-4">Testdaten-Eingabe</h2>
           <Form {...form}>
             <form onSubmit={handleCalculate} className="space-y-6">
               {/* Variant A (Control) */}
               <div className="bg-neutral-50 p-4 rounded-lg">
-                <h3 className="text-lg font-medium text-green-600 mb-3">Variant A (Control)</h3>
+                <h3 className="text-lg font-medium text-green-600 mb-3">Variante A (Kontrolle)</h3>
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
-                    <Label htmlFor="visitorsA" className="text-sm font-medium">Visitors</Label>
+                    <Label htmlFor="visitorsA" className="text-sm font-medium">Besucher</Label>
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="h-4 w-4 ml-1 text-neutral-500" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p className="w-48 text-xs">Total number of users who saw variant A</p>
+                          <p className="w-48 text-xs">Gesamtzahl der Benutzer, die Variante A gesehen haben</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -80,7 +80,7 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                             id="visitorsA"
                             type="number"
                             min="0"
-                            placeholder="e.g., 5000"
+                            placeholder="z.B. 5000"
                             {...field}
                             onChange={(e) => field.onChange(e.target.valueAsNumber || undefined)}
                           />
@@ -93,14 +93,14 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
-                    <Label htmlFor="conversionsA" className="text-sm font-medium">Conversions</Label>
+                    <Label htmlFor="conversionsA" className="text-sm font-medium">Konversionen</Label>
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="h-4 w-4 ml-1 text-neutral-500" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p className="w-48 text-xs">Number of users who completed the desired action</p>
+                          <p className="w-48 text-xs">Anzahl der Benutzer, die die gewünschte Aktion ausgeführt haben</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -115,7 +115,7 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                             id="conversionsA"
                             type="number"
                             min="0"
-                            placeholder="e.g., 500"
+                            placeholder="z.B. 500"
                             {...field}
                             onChange={(e) => field.onChange(e.target.valueAsNumber || undefined)}
                           />
@@ -129,18 +129,18 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
               
               {/* Variant B (Test) */}
               <div className="mt-6 bg-blue-50 p-4 rounded-lg">
-                <h3 className="text-lg font-medium text-blue-600 mb-3">Variant B (Test)</h3>
+                <h3 className="text-lg font-medium text-blue-600 mb-3">Variante B (Test)</h3>
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
-                    <Label htmlFor="visitorsB" className="text-sm font-medium">Visitors</Label>
+                    <Label htmlFor="visitorsB" className="text-sm font-medium">Besucher</Label>
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="h-4 w-4 ml-1 text-neutral-500" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p className="w-48 text-xs">Total number of users who saw variant B</p>
+                          <p className="w-48 text-xs">Gesamtzahl der Benutzer, die Variante B gesehen haben</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -155,7 +155,7 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                             id="visitorsB"
                             type="number"
                             min="0"
-                            placeholder="e.g., 5000"
+                            placeholder="z.B. 5000"
                             {...field}
                             onChange={(e) => field.onChange(e.target.valueAsNumber || undefined)}
                           />
@@ -168,14 +168,14 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
-                    <Label htmlFor="conversionsB" className="text-sm font-medium">Conversions</Label>
+                    <Label htmlFor="conversionsB" className="text-sm font-medium">Konversionen</Label>
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="h-4 w-4 ml-1 text-neutral-500" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p className="w-48 text-xs">Number of users who completed the desired action</p>
+                          <p className="w-48 text-xs">Anzahl der Benutzer, die die gewünschte Aktion ausgeführt haben</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -190,7 +190,7 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                             id="conversionsB"
                             type="number"
                             min="0"
-                            placeholder="e.g., 550"
+                            placeholder="z.B. 550"
                             {...field}
                             onChange={(e) => field.onChange(e.target.valueAsNumber || undefined)}
                           />
@@ -204,18 +204,18 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
               
               {/* Test Settings */}
               <div className="mt-6 bg-neutral-100 p-4 rounded-lg">
-                <h3 className="text-lg font-medium text-purple-600 mb-3">Test Settings</h3>
+                <h3 className="text-lg font-medium text-purple-600 mb-3">Testeinstellungen</h3>
                 
                 <div className="mb-4">
                   <div className="flex items-center mb-1">
-                    <Label htmlFor="confidenceLevel" className="text-sm font-medium">Confidence Level</Label>
+                    <Label htmlFor="confidenceLevel" className="text-sm font-medium">Konfidenzniveau</Label>
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="h-4 w-4 ml-1 text-neutral-500" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p className="w-48 text-xs">Represents how confident you want to be in your results. 95% is industry standard.</p>
+                          <p className="w-48 text-xs">Gibt an, wie sicher Sie sich Ihrer Ergebnisse sein möchten. 95% ist der Branchenstandard.</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -231,7 +231,7 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                         >
                           <FormControl>
                             <SelectTrigger>
-                              <SelectValue placeholder="Select confidence level" />
+                              <SelectValue placeholder="Konfidenzniveau auswählen" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
@@ -251,7 +251,7 @@ export default function TestDataInput({ onCalculate }: TestDataInputProps) {
                 type="submit" 
                 className="w-full bg-primary hover:bg-primary/90"
               >
-                Calculate Significance
+                Signifikanz berechnen
               </Button>
             </form>
           </Form>

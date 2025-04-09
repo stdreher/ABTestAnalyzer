@@ -18,10 +18,10 @@ export default function Home() {
       <div className="max-w-4xl mx-auto">
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-neutral-700 mb-2">
-            A/B Test Statistical Significance Calculator
+            A/B-Test Rechner für statistische Signifikanz
           </h1>
           <p className="text-neutral-500 max-w-2xl mx-auto">
-            Determine if your A/B test results are statistically significant with confidence.
+            Ermitteln Sie, ob Ihre A/B-Testergebnisse mit Sicherheit statistisch signifikant sind.
           </p>
         </header>
 
