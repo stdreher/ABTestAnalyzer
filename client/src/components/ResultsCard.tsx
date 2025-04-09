@@ -18,13 +18,16 @@ export default function ResultsCard({ results }: ResultsCardProps) {
     confidenceLevel
   } = results;
 
+  // Debug-Info zum Identifizieren von Problemen mit der Berechnung
+  console.log("Ergebnisse:", { rateA, rateB, fullResults: results });
+
   // Format values for display
   const formattedRateA = (rateA * 100).toFixed(2);
   const formattedRateB = (rateB * 100).toFixed(2);
   const formattedImprovement = relativeImprovement.toFixed(2);
   const formattedPValue = pValue.toFixed(4);
   const formattedZScore = zScore.toFixed(2);
-  const formattedCI = `${(confidenceInterval.lower * 100).toFixed(2)}% to ${(confidenceInterval.upper * 100).toFixed(2)}%`;
+  const formattedCI = `${(confidenceInterval.lower * 100).toFixed(2)}% bis ${(confidenceInterval.upper * 100).toFixed(2)}%`;
   const confidencePercentage = parseInt(confidenceLevel) * 100;
   
   // Calculate max rate for progress bars
@@ -80,10 +83,10 @@ export default function ResultsCard({ results }: ResultsCardProps) {
               <div>
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-sm font-medium">Variante B</span>
-                  <span className="text-sm font-medium text-accent">{formattedRateB}%</span>
+                  <span className="text-sm font-medium text-blue-600">{formattedRateB}%</span>
                 </div>
                 <div className="bg-neutral-100 rounded-full h-2">
-                  <div className="bg-accent rounded-full h-2 transition-all duration-500 ease-in-out" style={{ width: rateBWidth }}></div>
+                  <div className="bg-blue-600 rounded-full h-2 transition-all duration-500 ease-in-out" style={{ width: rateBWidth }}></div>
                 </div>
               </div>
             </div>
