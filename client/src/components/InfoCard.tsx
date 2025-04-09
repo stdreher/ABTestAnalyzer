@@ -19,6 +19,19 @@ export default function InfoCard() {
             </AccordionContent>
           </AccordionItem>
           
+          <AccordionItem value="z-score" className="border border-neutral-200 rounded-lg overflow-hidden px-0">
+            <AccordionTrigger className="px-4 py-3 font-medium hover:no-underline">
+              Was ist ein Z-Wert?
+            </AccordionTrigger>
+            <AccordionContent className="px-4 pb-4 text-sm text-neutral-600">
+              Der Z-Wert (oder Z-Score) ist ein statistisches Maß, das angibt, wie viele Standardabweichungen ein Wert vom Mittelwert entfernt ist. 
+              In A/B-Tests wird der Z-Wert verwendet, um zu quantifizieren, wie stark die Differenz zwischen zwei Konversionsraten ist, relativ zur Streuung dieser Raten.
+              <br /><br />
+              Ein höherer Z-Wert bedeutet einen stärkeren Unterschied zwischen den Varianten. Z-Werte nahe 0 bedeuten kaum Unterschied, während Z-Werte über 1,96 (bei einem 95% Konfidenzniveau) 
+              auf einen statistisch signifikanten Unterschied hindeuten. Der Z-Wert wird auch verwendet, um den p-Wert zu berechnen.
+            </AccordionContent>
+          </AccordionItem>
+          
           <AccordionItem value="p-value" className="border border-neutral-200 rounded-lg overflow-hidden px-0">
             <AccordionTrigger className="px-4 py-3 font-medium hover:no-underline">
               Was ist ein p-Wert?
