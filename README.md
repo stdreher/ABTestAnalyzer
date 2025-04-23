@@ -61,3 +61,8 @@ The application runs on port 5000 in development mode. Use the following command
 ```bash
 npm run dev
 ```
+
+## Credits
+App was built with www.replit.com
+
+Source & Documentation created with replit agent
