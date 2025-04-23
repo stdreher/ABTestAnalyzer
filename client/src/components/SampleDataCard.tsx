@@ -58,7 +58,7 @@ export default function SampleDataCard({ onSelectSample }: SampleDataCardProps) 
               key={index}
               variant="outline"
               onClick={() => onSelectSample(sample.data)}
-              className="text-sm bg-neutral-100 hover:bg-neutral-200 text-neutral-700 py-1.5 px-3 rounded-md w-full justify-start font-normal h-auto"
+              className="text-sm bg-neutral-100 hover:bg-neutral-200 text-neutral-700 py-1.5 px-3 rounded-md w-full justify-start font-normal h-auto whitespace-normal text-left"
             >
               <span className="font-medium">{sample.name}:</span> {sample.description}
             </Button>
