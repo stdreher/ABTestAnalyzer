@@ -13,11 +13,25 @@ export function calculateZScore(rate1: number, rate2: number, visitors1: number,
  * Uses an approximation of the normal CDF
  */
 export function calculatePValue(zScore: number): number {
-  // Approximation of the normal CDF for p-value
-  const t = 1 / (1 + 0.2316419 * Math.abs(zScore));
-  const d = 0.3989423 * Math.exp(-zScore * zScore / 2);
-  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
-  return zScore > 0 ? 2 * (1 - (0.5 - p)) : 2 * (0.5 - p);
+  const x = Math.abs(zScore);
+  let p = 0;
+  
+  if (x > 7) {
+    p = 0;
+  } else {
+    const a1 = 0.254829592;
+    const a2 = -0.284496736;
+    const a3 = 1.421413741;
+    const a4 = -1.453152027;
+    const a5 = 1.061405429;
+    const p1 = 0.3275911;
+    
+    const t = 1 / (1 + p1 * x);
+    const y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x / 2);
+    p = 1 - y;
+  }
+  
+  return 2 * p; // Two-tailed test
 }
 
 /**
@@ -69,7 +83,7 @@ export function calculateStatistics(data: ABTestResult): StatisticalResult {
   const relativeImprovement = ((rateB - rateA) / rateA) * 100;
   
   // Determine significance
-  const isSignificant = pValue < (1 - parseFloat(confidenceLevel));
+  const isSignificant = pValue < (1 - Number(confidenceLevel));
   
   return {
     isSignificant,
