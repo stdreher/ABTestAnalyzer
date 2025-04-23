@@ -35,7 +35,7 @@ export default function ResultsCard({ results }: ResultsCardProps) {
   const formattedZScore = zScore.toFixed(2);
   const formattedCI = `${(confidenceInterval.lower * 100).toFixed(2)}% bis ${(confidenceInterval.upper * 100).toFixed(2)}%`;
   const confidencePercentage = parseInt(confidenceLevel) * 100;
-  
+
   // Calculate max rate for progress bars
   const maxRate = Math.max(rateA, rateB) * 1.2; // Add 20% padding
   const rateAWidth = `${(rateA / maxRate) * 100}%`;
@@ -45,29 +45,29 @@ export default function ResultsCard({ results }: ResultsCardProps) {
     <Card className="bg-white shadow-sm mb-6">
       <CardContent className="pt-6">
         <h2 className="text-xl font-semibold mb-4">Testergebnisse</h2>
-        
+
         {/* Significance Display */}
         <div className={`mb-6 p-4 ${isSignificant ? 'bg-green-50 text-green-800' : 'bg-orange-50 text-orange-800'} rounded-lg text-center`}>
-          <div className="flex items-center justify-center mb-2">
-            {isSignificant ? (
-              <>
-                <CheckCircle className="text-secondary text-2xl mr-2" />
-                <h3 className="text-xl font-bold text-secondary">Statistisch signifikant</h3>
-              </>
-            ) : (
-              <>
-                <Info className="text-accent text-2xl mr-2" />
-                <h3 className="text-xl font-bold text-accent">Nicht statistisch signifikant</h3>
-              </>
-            )}
+            <div className="flex items-center justify-center mb-2">
+              {isSignificant ? (
+                <>
+                  <CheckCircle className="text-secondary text-2xl mr-2" />
+                  <h3 className="text-xl font-bold text-secondary">Statistisch signifikant</h3>
+                </>
+              ) : (
+                <>
+                  <Info className="text-accent text-2xl mr-2" />
+                  <h3 className="text-xl font-bold text-accent">Nicht statistisch signifikant</h3>
+                </>
+              )}
+            </div>
+            <p>
+              {isSignificant
+                ? `Es gibt einen signifikanten Unterschied zwischen den Varianten mit einem Konfidenzniveau von ${parseFloat(confidenceLevel) * 100}%.`
+                : `Der Unterschied zwischen den Varianten ist nicht signifikant bei einem Konfidenzniveau von ${parseFloat(confidenceLevel) * 100}%.`}
+            </p>
           </div>
-          <p>
-            {isSignificant
-              ? `Es gibt einen signifikanten Unterschied zwischen den Varianten mit einem Konfidenzniveau von ${confidencePercentage}%.`
-              : `Der Unterschied zwischen den Varianten ist nicht signifikant bei einem Konfidenzniveau von ${confidencePercentage}%.`}
-          </p>
-        </div>
-        
+
         {/* Results Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Conversion Rates */}
@@ -84,7 +84,7 @@ export default function ResultsCard({ results }: ResultsCardProps) {
                   <div className="bg-primary rounded-full h-2 transition-all duration-500 ease-in-out" style={{ width: rateAWidth }}></div>
                 </div>
               </div>
-              
+
               {/* Variant B Rate */}
               <div>
                 <div className="flex items-center justify-between mb-1">
@@ -97,7 +97,7 @@ export default function ResultsCard({ results }: ResultsCardProps) {
               </div>
             </div>
           </div>
-          
+
           {/* Relative Improvement */}
           <div>
             <h3 className="text-lg font-medium mb-3">Relative Verbesserung</h3>
@@ -111,7 +111,7 @@ export default function ResultsCard({ results }: ResultsCardProps) {
             </div>
           </div>
         </div>
-        
+
         {/* Statistical Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
@@ -131,7 +131,7 @@ export default function ResultsCard({ results }: ResultsCardProps) {
               </div>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-medium mb-3">Konfidenzintervall</h3>
             <div className="bg-neutral-50 p-4 rounded-lg h-full flex flex-col justify-center text-center text-sm">
@@ -142,7 +142,7 @@ export default function ResultsCard({ results }: ResultsCardProps) {
             </div>
           </div>
         </div>
-        
+
         {/* Interpretation Guide */}
         <div>
           <h3 className="text-lg font-medium mb-3">Was das bedeutet</h3>
@@ -150,7 +150,7 @@ export default function ResultsCard({ results }: ResultsCardProps) {
             {isSignificant ? (
               <>
                 <p className="mb-2">✅ <strong>Ihr Test zeigt einen statistisch signifikanten Unterschied</strong> mit einem p-Wert von {formattedPValue}.</p>
-                
+
                 {relativeImprovement > 0 ? (
                   <>
                     <p className="mb-2">📈 Variante B übertrifft Variante A um etwa {formattedImprovement}%.</p>
@@ -165,8 +165,8 @@ export default function ResultsCard({ results }: ResultsCardProps) {
               </>
             ) : (
               <>
-                <p className="mb-2">❓ <strong>Ihr Test zeigt keine statistisch signifikanten Ergebnisse</strong> bei einem Konfidenzniveau von {confidencePercentage}%.</p>
-                
+                <p className="mb-2">❓ <strong>Ihr Test zeigt keine statistisch signifikanten Ergebnisse</strong> bei einem Konfidenzniveau von {parseFloat(confidenceLevel) * 100}%. </p>
+
                 {Math.abs(relativeImprovement) < 5 ? (
                   <>
                     <p className="mb-2">📏 <strong>Kleine Effektgröße festgestellt.</strong> Der Unterschied zwischen den Varianten ({Math.abs(relativeImprovement).toFixed(2)}%) ist möglicherweise zu gering, um zuverlässig erkannt zu werden.</p>
